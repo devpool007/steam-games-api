@@ -4,7 +4,31 @@ This package provides convenient functions to fetch game data from the Steam API
 
 ---
 
+
 ## Functions
+
+### 0. getSteamIDList
+Fetches the full list of Steam apps (games and software) from the Steam API.
+
+**Signature:**
+```typescript
+getSteamIDList(): Promise<ListAPIResponse>
+```
+
+**Returns:**
+A promise that resolves to the full app list object as returned by the Steam API.
+
+**Example:**
+```typescript
+import { getSteamIDList } from 'steam-api-wrapper';
+
+async function showAppList() {
+  const appList = await getSteamIDList();
+  console.log(appList.applist.apps.app); // Array of { appid, name }
+}
+
+showAppList();
+```
 
 ### 1. getSteamGameDetails
 Fetches detailed information about a Steam game by its appid.
