@@ -1,4 +1,4 @@
-# 📦 steam-api-wrapper
+# 📦 steamgames
 
 A simple and typed TypeScript wrapper for the Steam Web and Store APIs.  
 Query app lists, game details, and more with clean, promise-based functions.
