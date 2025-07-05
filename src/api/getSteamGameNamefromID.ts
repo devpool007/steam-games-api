@@ -1,17 +1,15 @@
-import { loadCachedAppList } from "../utils/loadSteamIds";
+import { getSteamIDList } from "./getSteamIDList";
 
 export async function getSteamGameNamefromID(
-  appid: string
+  appid: number
 ): Promise<string | undefined> {
-  const appMap = await loadCachedAppList();
+  const appList = await getSteamIDList();
+  const appMap = appList.applist.apps.app;
 
-  // Since the data is an object (a map of ID -> Name), we iterate through its entries.
-  for (const [appId, name] of Object.entries(appMap)) {
-    if (appId === appid) {
-      return name;
-    }
-  }
+  // Find the first game whose name contains the search string (case-insensitive)
+  const match = appMap.find(
+    (app: { appid: number; name: string }) => app.appid === appid
+  );
 
-  // If the loop completes without finding a match, the game is not in our list.
-  return undefined;
+    return match?.name;
 }

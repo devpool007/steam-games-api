@@ -172,3 +172,19 @@ export interface PriceAPIResponse {
     data: GamePriceData;
   };
 }
+interface App {
+    appid: number;
+    name: string;
+}
+
+interface Apps {
+    app: App[];
+}
+
+interface AppList {
+    apps: Apps;
+}
+
+export interface ListAPIResponse {
+    applist: AppList;
+}

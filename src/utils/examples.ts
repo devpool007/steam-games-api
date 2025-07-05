@@ -11,8 +11,7 @@ async function testGetSteamGameAPIs() {
 
     for (const appid of appids) {
       const price = result[appid]?.data?.price_overview?.final_formatted;
-      const appiStr = String(appid);
-      const name = await getSteamGameNamefromID(appiStr);
+      const name = await getSteamGameNamefromID(appid);
       console.log(`Current Price of  ${name}:`, price);
     }
   } catch (error) {
