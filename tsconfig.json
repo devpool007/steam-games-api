@@ -8,8 +8,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "dist", ]
 }
 
     /* Visit https://aka.ms/tsconfig to read more about this file */

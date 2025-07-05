@@ -14,22 +14,3 @@ export async function getSteamPriceOverview(
   return data;
 }
 
-// Example usage
-async function testGetSteamGameDetails() {
-  const appids = [3240220, 292030];
-  const country = "de"; // Example country code
-
-  try {
-    const result = await getSteamPriceOverview(appids, country);
-
-    for (const appid of appids) {
-      const price = result[appid]?.data?.price_overview?.final_formatted;
-      console.log(`Price of game with appid ${appid}:`, price);
-    }
-  } catch (error) {
-    console.error("Error fetching game details:", error);
-  }
-}
-
-// Call the test
-// testGetSteamGameDetails();

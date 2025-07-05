@@ -14,25 +14,3 @@ export async function getSteamGameDetails(
   return gameData;
 
 }
-
-// Example usage function
-async function testGetSteamGameDetails() {
-  const appid = 292030; // The Witcher 3: Wild Hunt
-  const country = "de"; // Example country code
-
-  try {
-    const result = await getSteamGameDetails(appid, country);
-    if (result.success) {
-      console.log("Game name:", result.data.name);
-      console.log("Game price details:", result.data.price_overview);
-    }
-    else{
-      console.log("No data exists for this game.");
-    }
-  } catch (error) {
-    console.error("Error fetching game details:", error);
-  }
-}
-
-// Call the test
-testGetSteamGameDetails();

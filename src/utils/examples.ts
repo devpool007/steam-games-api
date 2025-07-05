@@ -2,7 +2,7 @@ import { getSteamPriceOverview } from "../api/getSteamPriceOverviews";
 import { getSteamGameNamefromID } from "../api/getSteamGameNamefromID";
 
 // Example usage together with getSteamGameNamefromID
-async function testGetSteamGameDetails() {
+async function testGetSteamGameAPIs() {
   const appids = [3240220, 292030, 377160];
   const country = "de"; // Example country code
 
@@ -21,4 +21,4 @@ async function testGetSteamGameDetails() {
 }
 
 // Call the test
-testGetSteamGameDetails();
+testGetSteamGameAPIs();
