@@ -1,4 +1,4 @@
-# Steam API Wrapper Documentation
+# 📦 steamgames Documentation
 
 This package provides convenient functions to fetch game data from the Steam API. Below are the available functions, their descriptions, and usage examples.
 
