@@ -1,5 +1,5 @@
 {
-  "name": "steam-api-wrapper",
+  "name": "steamgames",
   "version": "1.0.0",
   "description": "A package for fetching game data from Steam APIs",
   "main": "dist/index.js",

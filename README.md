@@ -18,6 +18,4 @@ Query app lists, game details, and more with clean, promise-based functions.
 ## 📦 Installation
 
 ```bash
-npm install steam-api-wrapper
-# or
-yarn add steam-api-wrapper
+npm install steamgames
