@@ -15,6 +15,8 @@ Query app lists, game details, and more with clean, promise-based functions.
 
 ---
 
+[Official documentation](https://github.com/devpool007/steamGames/blob/main/API_DOCS.md)
+
 ## 📦 Installation
 
 ```bash
