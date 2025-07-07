@@ -1,7 +1,19 @@
-# 📦 steamgames
 
-A simple and typed TypeScript wrapper for the Steam Web and Store APIs.  
-Query app lists, game details, and more with clean, promise-based functions.
+
+<div align="center">
+	<h1>📦 steamgames</h1>
+  <a href="https://github.com/AuroPick/epic-free-games/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/AuroPick/epic-free-games"></a>
+  <a href="https://www.npmjs.com/package/steamgames"><img alt="npm" src="https://img.shields.io/npm/v/steamgames"></a>
+  <a href="https://www.npmjs.com/package/steamgames"><img alt="npm" src="https://img.shields.io/npm/dm/steamgames"></a>
+   
+  </br>
+   </br>
+	<p><b>A simple and typed TypeScript wrapper for the Steam Web and Store APIs.  
+Query app lists, game details, and more with clean, promise-based functions.</b></p>
+
+ 
+</div>
+
 
 ---
 
