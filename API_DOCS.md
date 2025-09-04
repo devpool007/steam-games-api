@@ -20,7 +20,7 @@ A promise that resolves to the full app list object as returned by the Steam API
 
 **Example:**
 ```typescript
-import { getSteamIDList } from 'steam-api-wrapper';
+import { getSteamIDList } from 'steamgames';
 
 async function showAppList() {
   const appList = await getSteamIDList();
@@ -40,7 +40,7 @@ getSteamGameDetails(appid: number, country?: string): Promise<APIResponse>
 
 **Example:**
 ```typescript
-import { getSteamGameDetails } from 'steam-api-wrapper';
+import { getSteamGameDetails } from 'steamgames';
 
 const appid = 292030; // The Witcher 3: Wild Hunt
 const country = 'de'; // Optional country code
@@ -67,7 +67,7 @@ getSteamGameNamefromID(appid: string): Promise<string | undefined>
 
 **Example:**
 ```typescript
-import { getSteamGameNamefromID } from 'steam-api-wrapper';
+import { getSteamGameNamefromID } from 'steamgames';
 
 getSteamGameNamefromID('292030').then(name => {
   if (name) {
@@ -90,7 +90,7 @@ getSteamIDforGame(gameName: string): Promise<number | undefined>
 
 **Example:**
 ```typescript
-import { getSteamIDforGame } from 'steam-api-wrapper';
+import { getSteamIDforGame } from 'steamgames';
 
 getSteamIDforGame('Witcher 3').then(appid => {
   if (appid) {
@@ -114,7 +114,7 @@ getSteamPriceOverview(appids: number[], country?: string): Promise<PriceAPIRespo
 
 **Example:**
 ```typescript
-import { getSteamPriceOverview } from 'steam-api-wrapper';
+import { getSteamPriceOverview } from 'steamgames';
 
 const appids = [3240220, 292030];
 const country = 'de';
@@ -134,8 +134,8 @@ Fetches the price and name for multiple appids using both `getSteamPriceOverview
 
 **Example:**
 ```typescript
-import { getSteamPriceOverview } from 'steam-api-wrapper';
-import { getSteamGameNamefromID } from 'steam-api-wrapper';
+import { getSteamPriceOverview } from 'steamgames';
+import { getSteamGameNamefromID } from 'steamgames';
 
 async function testGetSteamGameAPIs() {
   const appids = [3240220, 292030, 377160];
