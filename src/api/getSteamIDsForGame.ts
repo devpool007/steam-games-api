@@ -1,28 +1,30 @@
 // import { loadCachedAppList } from "../utils/loadSteamIds";
 import { getSteamIDList } from "./getSteamIDList";
-export async function getSteamIDforGame(
+export async function getSteamIDsForGame(
   gameName: string
-): Promise<number | undefined> {
+): Promise<number [] | undefined> {
   const appList = await getSteamIDList();
   const appMap = appList.applist.apps.app;
 
-  // Find the first game whose name contains the search string (case-insensitive)
-  const match = appMap.find((app: { appid: number; name: string }) =>
+    // Find *all* games whose name contains the search string (case-insensitive)
+  const matches = appMap.filter((app: { appid: number; name: string }) =>
     app.name.toLowerCase().includes(gameName.toLowerCase())
   );
 
-  return match?.appid;
+  // Return only the IDs
+  return matches.map((app: { appid: number }) => app.appid);
 }
+
 
 // --- Quick test runner ---
 (async () => {
-  const id = await getSteamIDforGame("Witcher 3");
+  const id = await getSteamIDsForGame("Skyrim");
   if (id) {
     console.log("Found appid:", id);
   } else {
     console.log("Game not found.");
   }
 
-  const id2 = await getSteamIDforGame("Nonexistent Game");
+  const id2 = await getSteamIDsForGame("Nonexistent Game");
   console.log("Nonexistent Game →", id2);
 })();
