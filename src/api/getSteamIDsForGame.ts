@@ -1,6 +1,6 @@
 // import { loadCachedAppList } from "../utils/loadSteamIds";
 import { getSteamIDList } from "./getSteamIDList";
-export async function getSteamIDsForGame(
+export async function getSteamIDsforGame(
   gameName: string
 ): Promise<number [] | undefined> {
   const appList = await getSteamIDList();
@@ -18,13 +18,13 @@ export async function getSteamIDsForGame(
 
 // --- Quick test runner ---
 (async () => {
-  const id = await getSteamIDsForGame("Skyrim");
+  const id = await getSteamIDsforGame("Skyrim");
   if (id) {
     console.log("Found appid:", id);
   } else {
     console.log("Game not found.");
   }
 
-  const id2 = await getSteamIDsForGame("Nonexistent Game");
+  const id2 = await getSteamIDsforGame("Nonexistent Game");
   console.log("Nonexistent Game →", id2);
 })();
