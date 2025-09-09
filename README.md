@@ -118,7 +118,7 @@ getSteamGameNamefromID('292030').then(name => {
 ### 3. getSteamIDforGame
 Finds the Steam appid for a given game name.
 I have applied fuzzy logic for search and you can set the threshold in the function.
-threshold value can be between (0.1 - 1.0) (least to most strict)
+threshold value can be between (0.1 - 1.0) (most to least strict)
 **Signature:**
 ```typescript
 getSteamIDforGame(gameName: string, threshold: number): Promise<number | undefined>
@@ -143,7 +143,7 @@ getSteamIDforGame('Witcher 3', 0.2).then(appid => {
 ### 4. getSteamIDsforGame
 Finds multiple Steam appids for a given game name.
 I have applied fuzzy logic for search and you can set the threshold in the function.
-threshold value can be between (0.1 - 1.0) (least to most strict)
+threshold value can be between (0.1 - 1.0) (most to least strict)
 
 **Signature:**
 ```typescript
