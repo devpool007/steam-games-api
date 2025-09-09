@@ -23,7 +23,7 @@ describe("getSteamIDforGame", () => {
       },
     });
     // Act
-    const result = await getSteamIDforGame("Counter-Strike");
+    const result = await getSteamIDforGame("Counter-Strike", 0.1);
     // Assert
     expect(result).toBe(10);
   });
@@ -42,7 +42,7 @@ describe("getSteamIDforGame", () => {
       },
     });
     // Act
-    const result = await getSteamIDforGame("Strike");
+    const result = await getSteamIDforGame("Strike",0.1);
     // Assert
     expect(result).toBe(10);
   });
@@ -60,7 +60,7 @@ describe("getSteamIDforGame", () => {
       },
     });
     // Act
-    const result = await getSteamIDforGame("Half-Life");
+    const result = await getSteamIDforGame("Half-Life",0.1);
     // Assert
     expect(result).toBeUndefined();
   });
