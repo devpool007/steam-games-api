@@ -3,7 +3,8 @@ import { getSteamIDList } from "./getSteamIDList";
 import Fuse from "fuse.js";
 
 export async function getSteamIDsforGame(
-  gameName: string
+  gameName: string,
+  threshold: number
 ): Promise<number[] | undefined> {
   const appList = await getSteamIDList();
   const appMap = appList.applist.apps.app;
@@ -11,7 +12,7 @@ export async function getSteamIDsforGame(
   // Configure Fuse
   const fuse = new Fuse(appMap, {
     keys: ["name"],
-    threshold: 0.2, // lower = stricter matching
+    threshold: threshold, // lower = stricter matching
     ignoreLocation: false,
   });
 

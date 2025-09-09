@@ -116,18 +116,47 @@ getSteamGameNamefromID('292030').then(name => {
 ---
 
 ### 3. getSteamIDforGame
-Finds the Steam appid for a given game name (case-insensitive, substring match).
-
+Finds the Steam appid for a given game name.
+I have applied fuzzy logic for search and you can set the threshold in the function.
+threshold - 0.1 most strict
+threshold - 1.0 least strict
 **Signature:**
 ```typescript
-getSteamIDforGame(gameName: string): Promise<number | undefined>
+getSteamIDforGame(gameName: string, threshold: number): Promise<number | undefined>
+
 ```
 
 **Example:**
 ```typescript
 import { getSteamIDforGame } from 'steamgames';
 
-getSteamIDforGame('Witcher 3').then(appid => {
+getSteamIDforGame('Witcher 3', 0.2).then(appid => {
+  if (appid) {
+    console.log('Found appid:', appid);
+  } else {
+    console.log('Game not found.');
+  }
+});
+```
+
+---
+
+### 4. getSteamIDsforGame
+Finds multiple Steam appids for a given game name.
+I have applied fuzzy logic for search and you can set the threshold in the function.
+threshold - 0.1 most strict
+threshold - 1.0 least strict
+**Signature:**
+```typescript
+getSteamIDsforGame(gameName: string, threshold: number): Promise<number | undefined>
+
+```
+
+**Example:**
+```typescript
+import { getSteamIDsforGame } from 'steamgames';
+
+getSteamIDsforGame('Witcher 3', 0.2).then(appid => {
   if (appid) {
     console.log('Found appid:', appid);
   } else {
@@ -139,7 +168,7 @@ getSteamIDforGame('Witcher 3').then(appid => {
 ---
 
 
-### 4. getSteamPriceOverview
+### 5. getSteamPriceOverview
 Fetches price overview for one or more Steam appids.
 
 **Signature:**
@@ -164,7 +193,7 @@ getSteamPriceOverview(appids, country).then(result => {
 
 ---
 
-### 5. Combined Example: Get Game Name and Price
+### 6. Combined Example: Get Game Name and Price
 Fetches the price and name for multiple appids using both `getSteamPriceOverview` and `getSteamGameNamefromID`.
 
 **Example:**
