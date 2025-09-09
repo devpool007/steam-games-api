@@ -1,10 +1,12 @@
 {
   "name": "steamgames",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A package for fetching game data from Steam APIs",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "directories": {
     "test": "test"
   },
@@ -36,5 +38,8 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0"
   }
 }
